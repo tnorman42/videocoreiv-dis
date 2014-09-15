@@ -1,7 +1,8 @@
 BIN=videocoreiv-dis
 
-OBJS= \
-	main.o \
+MAINOBJ=main.o
+
+DISOBJS= \
 	dis/Disassembler.o \
 	dis/InstructionGroup.o \
 	vc4/InstructionSet.o \
@@ -11,12 +12,20 @@ OBJS= \
 	vc4/Vector48Instructions.o \
 	vc4/Vector80Instructions.o
 
-$(BIN): $(OBJS)
+TESTOBJS= \
+	test.o \
+	vc4/test.o
+
+$(BIN): $(MAINOBJ) $(DISOBJS)
 	g++ -o $@ $^
 
+test: $(TESTOBJS) $(DISOBJS)
+	g++ -o distest $^
+	./distest
+
 clean: rmtmp
-	rm -f $(BIN)
-	rm -f $(OBJS)
+	rm -f $(BIN) $(MAINOBJ) $(DISOBJS) $(TESTOBJS)
+	rm -f distest
 
 rmtmp:
 	find . -name "*~" -exec rm {} \;
