@@ -1,0 +1,9 @@
+A C++ disassembler for the VideoCore IV GPU.
+
+Based off of the instruction set described here:
+https://github.com/hermanhermitage/videocoreiv/wiki/VideoCore-IV-Programmers-Manual
+
+This project is more meant as a learning exercise for myself than
+as anything production-worthy. Once I understand the instruction
+set well enough, I'm hoping to support other related projects
+support this instruction set.
