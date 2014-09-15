@@ -37,6 +37,8 @@ size_t Disassembler::fillBuffer(unsigned char *buf, size_t bufFill, size_t maxSi
 }
 
 size_t Disassembler::removeBytesReadFromBuffer(unsigned char *buf, size_t bufFill, int bytesRead) {
-  memmove(buf, buf + bytesRead, bufFill - bytesRead);
+  if (bufFill != bytesRead) {
+    memmove(buf, buf + bytesRead, bufFill - bytesRead);
+  }
   return bufFill - bytesRead;
 }

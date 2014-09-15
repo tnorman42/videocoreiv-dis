@@ -9,6 +9,7 @@ DISOBJS= \
 	vc4/Scalar16Instructions.o \
 	vc4/Scalar32Instructions.o \
 	vc4/Scalar48Instructions.o \
+	vc4/SimpleScalar16Instruction.o \
 	vc4/Vector48Instructions.o \
 	vc4/Vector80Instructions.o
 

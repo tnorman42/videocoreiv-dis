@@ -1,10 +1,12 @@
 // Author: tim@normsoft.com (Tim Norman)
 
 #include "Scalar16Instructions.h"
+#include "SimpleScalar16Instruction.h"
 
 namespace VC4 {
 
 Scalar16Instructions::Scalar16Instructions() {
+  addDisassemblable(new SimpleScalar16Instruction(0x0000, "bkpt"));
   // TODO
 }
 
