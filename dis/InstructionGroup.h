@@ -21,9 +21,9 @@ class InstructionGroup : public Disassemblable {
   // Add a Disassemblable as part of this group.
   void addDisassemblable(Disassemblable *disassemblable);
 
-  virtual bool match(std::istream *in);
+  virtual int match(const unsigned char *in, size_t len);
 
-  virtual void disassemble(std::istream *in, std::ostream *out);
+  virtual int disassemble(const unsigned char *in, size_t len, std::ostream *out);
 
 };
 

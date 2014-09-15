@@ -9,12 +9,13 @@
 
 class Disassemblable {
  public:
-  // Returns true if the data in the stream can be disassembled with
-  // this object.
-  virtual bool match(std::istream *in) = 0;
+  // Returns the number of bytes for the opcode if the data in the
+  // input can be disassembled with this object or 0 if not.
+  virtual int match(const unsigned char *in, size_t len) = 0;
 
-  // Disassemble one instruction from the in stream to the out stream.
-  virtual void disassemble(std::istream *in, std::ostream *out) = 0;
+  // Disassemble one instruction from the input and return the
+  // number of bytes consumed.
+  virtual int disassemble(const unsigned char *in, size_t len, std::ostream *out) = 0;
 };
 
 #endif

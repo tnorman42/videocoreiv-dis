@@ -8,14 +8,8 @@ Vector80Instructions::Vector80Instructions() {
   // TODO
 }
 
-bool Vector80Instructions::match(std::istream *in) {
-  unsigned char lsb = 0, msb = 0;
-  in->read((char *)&lsb, 1);
-  in->read((char *)&msb, 1);
-  in->putback(msb);
-  in->putback(lsb);
-
-  return 0xf8 == (msb & 0xf8);
+int Vector80Instructions::match(const unsigned char *in, size_t len) {
+  return len >= 10 && 0xf8 == (in[1] & 0xf8) ? 10 : 0;
 }
 
 }

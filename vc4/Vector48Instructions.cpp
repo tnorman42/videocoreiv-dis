@@ -8,14 +8,8 @@ Vector48Instructions::Vector48Instructions() {
   // TODO
 }
 
-bool Vector48Instructions::match(std::istream *in) {
-  unsigned char lsb = 0, msb = 0;
-  in->read((char *)&lsb, 1);
-  in->read((char *)&msb, 1);
-  in->putback(msb);
-  in->putback(lsb);
-
-  return 0xf0 == (msb & 0xf0);
+int Vector48Instructions::match(const unsigned char *in, size_t len) {
+  return len >= 6 && 0xf0 == (in[1] & 0xf0) ? 6 : 0;
 }
 
 }

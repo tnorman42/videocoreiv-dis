@@ -12,6 +12,9 @@ class Disassembler {
 
   Disassemblable *targetDisassemblable;
 
+  size_t fillBuffer(unsigned char *buf, size_t bufFill, size_t maxSize, std::istream *in);
+  size_t removeBytesReadFromBuffer(unsigned char *buf, size_t bufFill, int bytesRead);
+
  public:
   Disassembler();
   ~Disassembler();
@@ -22,7 +25,7 @@ class Disassembler {
 
   // Disassemble the binary from the in stream and output opcodes in
   // ASCII to the out stream.
-  void disassmeble(std::istream *in, std::ostream *out);
+  void disassemble(std::istream *in, std::ostream *out);
 
 };
 

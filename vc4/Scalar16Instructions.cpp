@@ -8,14 +8,8 @@ Scalar16Instructions::Scalar16Instructions() {
   // TODO
 }
 
-bool Scalar16Instructions::match(std::istream *in) {
-  unsigned char lsb = 0, msb = 0;
-  in->read((char *)&lsb, 1);
-  in->read((char *)&msb, 1);
-  in->putback(msb);
-  in->putback(lsb);
-
-  return 0 == (msb & 0x80);
+int Scalar16Instructions::match(const unsigned char *in, size_t len) {
+  return len >= 2 && 0 == (in[1] & 0x80) ? 2 : 0;
 }
 
 }

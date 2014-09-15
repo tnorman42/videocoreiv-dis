@@ -17,22 +17,22 @@ void InstructionGroup::addDisassemblable(Disassemblable *disassemblable) {
   disassemblables.push_back(disassemblable);
 }
 
-bool InstructionGroup::match(std::istream *in) {
+int InstructionGroup::match(const unsigned char *in, size_t len) {
+  int bytes;
   for (std::vector<Disassemblable *>::iterator it = disassemblables.begin();
        it != disassemblables.end(); ++it) {
-    if ((*it)->match(in)) {
-      return true;
+    if (bytes = (*it)->match(in, len)) {
+      return bytes;
     }
   }
-  return false;
+  return 0;
 }
 
-void InstructionGroup::disassemble(std::istream *in, std::ostream *out) {
+int InstructionGroup::disassemble(const unsigned char *in, size_t len, std::ostream *out) {
   for (std::vector<Disassemblable *>::iterator it = disassemblables.begin();
        it != disassemblables.end(); ++it) {
-    if ((*it)->match(in)) {
-      (*it)->disassemble(in, out);
-      return;
+    if ((*it)->match(in, len)) {
+      return (*it)->disassemble(in, len, out);
     }
   }
 

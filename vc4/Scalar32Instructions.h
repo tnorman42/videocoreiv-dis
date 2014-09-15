@@ -13,7 +13,7 @@ namespace VC4 {
   public:
     Scalar32Instructions();
 
-    virtual bool match(std::istream *in);
+    virtual int match(const unsigned char *in, size_t len);
   };
 
 }
