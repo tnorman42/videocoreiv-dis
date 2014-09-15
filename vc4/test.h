@@ -9,7 +9,7 @@ class Disassembler;
 
 namespace VC4 {
 
-  void Test(Disassembler &disassembler);
+  void Test(Disassembler &disassembler, int *succeeded, int *failed);
 
 }
 

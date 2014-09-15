@@ -10,7 +10,9 @@ int main(int argc, char **argv) {
   Disassembler disassembler;
   disassembler.setTargetDisassemblable(new VC4::InstructionSet());
 
-  VC4::Test(disassembler);
+  int succeeded = 0;
+  int failed = 0;
+  VC4::Test(disassembler, &succeeded, &failed);
 
-  std::cout << "TESTS COMPLETE" << std::endl;
+  std::cout << succeeded << " TESTS SUCCEEDED, " << failed << " TESTS FAILED" << std::endl;
 }
