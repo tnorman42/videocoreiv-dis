@@ -12,7 +12,7 @@ OBJS= \
 	vc4/Vector80Instructions.o
 
 $(BIN): $(OBJS)
-	g++ -o $@ $<
+	g++ -o $@ $^
 
 clean: rmtmp
 	rm -f $(BIN)
