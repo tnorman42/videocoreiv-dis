@@ -2,6 +2,9 @@
 //
 // Author: tim@normsoft.com (Tim Norman)
 
+#ifndef _Disassembler_h_included_
+#define _Disassembler_h_included_
+
 #include <iostream>
 #include "Disassemblable.h"
 
@@ -22,3 +25,5 @@ class Disassembler {
   void disassmeble(std::istream *in, std::ostream *out);
 
 };
+
+#endif

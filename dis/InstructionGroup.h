@@ -3,6 +3,9 @@
 //
 // Author: tim@normsoft.com (Tim Norman)
 
+#ifndef _InstructionGroup_h_included_
+#define _InstructionGroup_h_included_
+
 #include <istream>
 #include <vector>
 #include "Disassemblable.h"
@@ -23,3 +26,5 @@ class InstructionGroup : public Disassemblable {
   virtual void disassemble(std::istream *in, std::ostream *out);
 
 };
+
+#endif

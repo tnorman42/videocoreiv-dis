@@ -2,6 +2,9 @@
 //
 // Author: tim@normsoft.com (Tim Norman)
 
+#ifndef _Disassemblable_h_included_
+#define _Disassemblable_h_included_
+
 #include <istream>
 
 class Disassemblable {
@@ -13,3 +16,5 @@ class Disassemblable {
   // Disassemble one instruction from the in stream to the out stream.
   virtual void disassemble(std::istream *in, std::ostream *out) = 0;
 };
+
+#endif
