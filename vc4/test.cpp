@@ -45,6 +45,16 @@ static void test(Disassembler &disassembler, const char *inBuf, size_t len, cons
 
 void Test(Disassembler &disassembler, int *succeeded, int *failed) {
   test(disassembler, "\x00\x00\x00\x00", 4, "bkpt", succeeded, failed);
+  test(disassembler, "\x01\x00\x00\x00", 4, "nop", succeeded, failed);
+  test(disassembler, "\x02\x00\x00\x00", 4, "sleep", succeeded, failed);
+  test(disassembler, "\x03\x00\x00\x00", 4, "user", succeeded, failed);
+  test(disassembler, "\x04\x00\x00\x00", 4, "ei", succeeded, failed);
+  test(disassembler, "\x05\x00\x00\x00", 4, "di", succeeded, failed);
+  test(disassembler, "\x06\x00\x00\x00", 4, "cbclr", succeeded, failed);
+  test(disassembler, "\x07\x00\x00\x00", 4, "cbinc", succeeded, failed);
+  test(disassembler, "\x08\x00\x00\x00", 4, "cbchg", succeeded, failed);
+  test(disassembler, "\x09\x00\x00\x00", 4, "cbdec", succeeded, failed);
+  test(disassembler, "\x0a\x00\x00\x00", 4, "rti", succeeded, failed);
 }
 
 }
