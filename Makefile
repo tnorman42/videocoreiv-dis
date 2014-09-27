@@ -6,6 +6,7 @@ DISOBJS= \
 	dis/Disassembler.o \
 	dis/InstructionGroup.o \
 	vc4/InstructionSet.o \
+	vc4/Registers.o \
 	vc4/Scalar16Instructions.o \
 	vc4/Scalar32Instructions.o \
 	vc4/Scalar48Instructions.o \

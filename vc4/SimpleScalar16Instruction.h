@@ -2,8 +2,8 @@
 //
 // Author: tim@normsoft.com (Tim Norman)
 
-#ifndef _SimpleScalar16Instruction_h_included_
-#define _SimpleScalar16Instruction_h_included_
+#ifndef _vc4_SimpleScalar16Instruction_h_included_
+#define _vc4_SimpleScalar16Instruction_h_included_
 
 #include <ostream>
 #include <stdint.h>

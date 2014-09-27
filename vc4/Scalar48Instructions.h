@@ -2,8 +2,8 @@
 //
 // Author: tim@normsoft.com (Tim Norman)
 
-#ifndef _Scalar48Instructions_h_included_
-#define _Scalar48Instructions_h_included_
+#ifndef _vc4_Scalar48Instructions_h_included_
+#define _vc4_Scalar48Instructions_h_included_
 
 #include "../dis/InstructionGroup.h"
 
